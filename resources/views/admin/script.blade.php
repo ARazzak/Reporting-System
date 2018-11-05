@@ -1,4 +1,3 @@
-
 <!-- jQuery -->
 <script src="{{asset('public/backend/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -36,3 +35,21 @@
 <script src="{{asset('public/backend/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('public/backend/dist/js/demo.js')}}"></script>
+<!-- DataTables -->
+<script src="public/backend/dist/js/jquery.dataTables.js"></script>
+<script src="public/backend/dist/js/dataTables.bootstrap4.js"></script>
+
+
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
