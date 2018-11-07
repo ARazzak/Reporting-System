@@ -59,3 +59,9 @@
 @import url("polaris/polaris.css");
 
 @import url("futurico/futurico.css");
+
+
+.btn-group-sm>.btn, .btn-sm {
+    padding: 0.15rem .3rem;
+   
+}

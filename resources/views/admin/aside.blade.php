@@ -4,7 +4,7 @@
     <a href="index3.html" class="brand-link">
       <img src="{{URL::to('public/backend/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Daily Reporting System</span>
+      <span class="brand-text font-weight-light">Reporting System</span>
     </a>
 
     <!-- Sidebar -->
@@ -103,7 +103,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{URL::to('/view_report')}}" class="nav-link">
+                <a href="{{URL::to('/view_all_report')}}" class="nav-link">
                     <i class="fa fa-angle-double-right nav-icon"></i>
                   <p>View Report </p>
                 </a>

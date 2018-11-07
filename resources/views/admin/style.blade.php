@@ -19,4 +19,15 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
   <!-- DataTables -->
-  <link rel="stylesheet" href="public/backend/dist/css/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="{{asset('public/backend/dist/css/dataTables.bootstrap4.css')}}">
+
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{asset('public/backend/plugins/daterangepicker/daterangepicker-bs3.css')}}">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="{{asset('public/backend/plugins/iCheck/all.css')}}">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="{{asset('public/backend/plugins/colorpicker/bootstrap-colorpicker.min.css')}}">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="{{asset('public/backend/plugins/timepicker/bootstrap-timepicker.min.css')}}">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{asset('public/backend/plugins/select2/select2.min.css')}}">

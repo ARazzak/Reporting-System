@@ -4,9 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Attendance extends Model
+class Report extends Model
 {
     //
-    //protected $table="datatables_data";
-
 }

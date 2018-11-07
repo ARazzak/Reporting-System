@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Attendance;
+use App\Report;
 use DB;
+//use App\Data;
 
 class ReportController extends Controller
 {
@@ -22,37 +23,79 @@ class ReportController extends Controller
        return view('admin.page.view_attendance');
     }
 
-    public function view_all_report()
-    {
-       return view('admin.page.view_report');
-    }
+    // public function view_all_report()
+    // {
+    //    return view('admin.page.view_report');
+    // }
 
     public function save(Request $request)
     {
-    	$att = new Attendance();
+    	$rep = new Report();
 
-    	$att->emp_Name = $request->employeeName;
-    	$att->current_Date = $request->date;
-    	$att->start_Time = $request->in_time;
-    	$att->end_Time = $request->out_time;
-    	$att->working_Hours = $request->work_Hour;
-    	$att->remarks = $request->remarks;
-    	$att->status = $request->status;
+    	$rep->org_Name = $request->organizationName;
+    	$rep->org_Head = $request->orgHeadName;
+    	$rep->head_Mobile = $request->orgHeadMobile;
+    	$rep->total_Stu = $request->orgTotalStu;
+    	$rep->class_room = $request->orgClassRoom;
+    	// $rep->remarks = $request->remarks;
+    	// $rep->status = $request->status;
 
-    	$att->save();
+    	$rep->save();
 
-    	return redirect('/add_attendance')->with('message','Data insert successfully.');
+    	return redirect('/add_report')->with('message','Data insert successfully.');
 
     }
 
     //All data show
 
-    public function view_all_attendace()
+    public function view_all_report()
     {
-    	$atten = DB::table('attendances')->get();
+        //$att = Attendance::all();
+    	$rep = DB::table('reports')->get();
 
-    	return view('admin.page.view_attendance');
+    	return view('admin.page.view_all_report',['rep'=>$rep]);
     }
+
+
+    //Edit data into database table
+    public function edit_report($id)
+    {
+      $reportEdit = Report::where('id',$id)->first();
+
+      return view('admin.page.edit_report',['report'=>$reportEdit]);
+    }
+
+
+    //update data into database table
+    public function update(Request $request, $id)
+    {
+        //dd($request->all());
+    
+      $report = Report::find($request->id);
+
+      $report->org_Name = $request->organizationName;
+      $report->org_Head = $request->orgHeadName;
+      $report->head_Mobile = $request->orgHeadMobile;
+      $report->total_Stu = $request->orgTotalStu;
+      $report->class_room = $request->orgClassRoom;
+     
+    
+
+      $report->save();
+
+      return redirect('/view_all_report')->with('message','Update date successfully.');
+    }
+//Delete data into database table
+    public function delete($id)
+    {
+      $report = Report::find($id);
+
+      $report->delete();
+
+      return redirect('/view_all_report')->with('message','Delete date successfully.');
+    }
+
+
 
 
 }

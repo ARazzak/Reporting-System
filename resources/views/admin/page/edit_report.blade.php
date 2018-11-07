@@ -26,7 +26,7 @@
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default card card-primary">
-		<form action="{{URL::to('/save')}}" method="post">
+		<form action="{{URL::to('/report/update/{$id}')}}" method="post">
 
 			 @csrf
 
@@ -34,7 +34,7 @@
              <h4 style="color:green">{{ Session::get('message')}}</h4>
 
           <div class="card-header">
-            <h3 class="card-title ">Add Report</h3>
+            <h3 class="card-title ">Edit Report</h3>
 
 
             <!--<div class="card-tools">
@@ -48,15 +48,15 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label>Organization Name</label>
-                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Organization Name" name="organizationName" > 
+                   <input type="text" class="form-control" id="exampleInputEmail1" value="{{$report->org_Name}}" name="organizationName" > 
                 </div>
 
                 <div class="form-group">
                   <label>Org. Total Student</label>
-                   <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Org. Total Student" name="orgTotalStu" > 
+                   <input type="number" class="form-control" id="exampleInputEmail1" value="{{$report->total_Stu}}" name="orgTotalStu" > 
                 </div>		
 				
-				
+                <input type="hidden" name="id" value="{{ $report->id}}">
 				 
 				
 				
@@ -67,12 +67,12 @@
 			         <div class="col-md-4">
                   <div class="form-group">
                       <label>Org. Head Name</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Org. Head Name" name="orgHeadName" > 
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="{{$report->org_Head}}" name="orgHeadName" > 
                   </div>
 
                   <div class="form-group">
                   <label>Org. Class Room</label>
-                   <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Org. Class Room" name="orgClassRoom" > 
+                   <input type="number" class="form-control" id="exampleInputEmail1" value="{{$report->class_room}}" name="orgClassRoom" > 
                   </div>
 
 
@@ -88,7 +88,7 @@
                		 
                <div class="form-group">
                   <label>Org. Head Mobile</label>
-                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Org. Head Mobile" name="orgHeadMobile" > 
+                   <input type="text" class="form-control" id="exampleInputEmail1" value="{{$report->head_Mobile}}" name="orgHeadMobile" > 
                 </div> 
 
                 

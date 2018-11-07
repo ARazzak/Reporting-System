@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -28,7 +29,9 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
+
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -51,6 +54,12 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'mobile' => 'required|integer|max:11',
+            'division' => 'required|string|max:255',
+            'district' => 'required|string|max:255',
+            'zip_code' => 'required|integer|max:255',
+            'gender' => 'required|string|max:255',
+            'religion' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -63,10 +72,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        
+        $data = ([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'mobile' => $data['mobile'],
+            'division' => $data['division'],
+            'district' => $data['district'],
+            'zip_code' => $data['zip_code'],
+            'gender' => $data['gender'],
+            'religion' => $data['religion'],
+            'password' => Hash::make($data['password'])
+
         ]);
+
+        DB::table('users')->insert($data);
+
+        return Redirect::to('/');
     }
 }

@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Attendance</h1>
+            <h1>Edit Attendance</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -26,7 +26,7 @@
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default card card-primary">
-		<form action="{{URL::to('/saves')}}" method="post">
+		<form action="{{URL::to('/attendance/update/{$id}')}}" method="post">
 
 			 @csrf
 
@@ -34,7 +34,7 @@
              <h4 style="color:green">{{ Session::get('message')}}</h4>
 
           <div class="card-header">
-            <h3 class="card-title ">Add Attendance</h3>
+            <h3 class="card-title ">Edit Attendance</h3>
 
 
             <!--<div class="card-tools">
@@ -48,16 +48,16 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label>Employee Name</label>
-                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Employee Name" name="employeeName" > 
+                   <input type="text" class="form-control" id="exampleInputEmail1" name="employeeName" value="{{$attendance->emp_Name}}"> 
                 </div>	
-				
+				<input type="hidden" name="id" value="{{ $attendance->id}}">
 				
 				  <div class="bootstrap-timepicker">
                   <div class="form-group">
                     <label>Out Time :</label>
 
                     <div class="input-group">
-                      <input type="time" name="out_time" class="form-control timepicker">
+                      <input type="time" name="out_time" class="form-control timepicker" value="{{$attendance->end_Time}}">
 
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
@@ -68,10 +68,10 @@
                   <!-- /.form group -->
                 </div>
 				
-				<div class="form-group">
+				<!-- <div class="form-group">
                   <label>Status</label>
                    <input type="text"  name="status" class="form-control" id="exampleInputEmail1" placeholder="Status"> 
-                </div>
+                </div> -->
 
               </div>
               <!-- /.col -->
@@ -80,11 +80,10 @@
 			     
 				 <!-- <div class="form-group">
                   <label>Data</label>
-                   <input type="text" name="date" class="form-control" id="exampleInputEmail1"> 
+                   <input type="text" name="date" class="form-control" id="exampleInputEmail1" value="{{$attendance->current_Date}}"> 
                 </div> -->
-           
 
-           <!-- Date range -->
+                <!-- Date range -->
            <div class="form-group">
                   <label>Date</label>
 
@@ -94,15 +93,16 @@
                         <i class="fa fa-calendar"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control float-right" id="reservation" name="date">
+                    <input type="text" class="form-control float-right" id="reservation" name="date" value="{{$attendance->current_Date}}" >
                   </div>
                   <!-- /.input group -->
                 </div>
+                
 
               <!-- Working Hours-->
 			  <div class="form-group">
                   <label>Working Hours</label>
-                   <input type="time" name="work_Hour" class="form-control" id="exampleInputEmail1"> 
+                   <input type="time" name="work_Hour" class="form-control" id="exampleInputEmail1" value="{{$attendance->working_Hours}}" > 
                 </div>
 
               </div>
@@ -115,7 +115,7 @@
                     <label>In Time :</label>
 
                     <div class="input-group">
-                      <input type="time" name="in_time" class="form-control timepicker">
+                      <input type="time" name="in_time" class="form-control timepicker" value="{{ $attendance->start_Time }}">
 
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
@@ -128,7 +128,7 @@
 				
 				<div class="form-group">
                   <label>Remarks</label>
-                   <input type="text"  name="remarks" class="form-control" id="exampleInputEmail1" placeholder="Remarks"> 
+                   <input type="text"  name="remarks" class="form-control" id="exampleInputEmail1" placeholder="Remarks" value="{{$attendance->remarks}}"> 
                 </div>
                  
               </div>

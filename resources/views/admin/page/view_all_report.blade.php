@@ -10,7 +10,7 @@
          
 
           <div class="card">
-            <div class="card-header">
+            <div class="card-header card-primary">
               <h3 class="card-title">Data Table With Full Features</h3>
             </div>
             <!-- /.card-header -->
@@ -21,29 +21,27 @@
                 <thead>
                 <tr>
                   <th>Sl. No.</th>
-                  <th>Employee Name</th>
-                  <th>Date</th>
-                  <th>Start Time</th>
-                  <th>End Time</th>
-                  <th>Work Hours</th>
-                  <th>Remarks</th>
+                  <th>Organization Name</th>
+                  <th>Org. Head Name</th>
+                  <th>Org. Head Mobile</th>
+                  <th>Org. Total Student</th>
+                  <th>Org. Class Room</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 
                 <tbody>
                  @php $i=0 @endphp
-                @foreach($att as $attens )
+                @foreach($rep as $reps )
                 <tr>
                   <td>{{ ++$i }}</td>
-                  <td>{{ $attens->emp_Name }}</td>
-                  <td>{{ $attens->current_Date }}</td>
-                  <td>{{ $attens->start_Time }}</td>
-                  <td>{{ $attens->end_Time }}</td>
-                  <td>{{ $attens->working_Hours }}</td>
-                  <td>{{ $attens->remarks }}</td>
-                  <td><a href="{{url('/attendance/edit/'.$attens->id) }}" class="btn btn-success btn-sm"><i class="fa fa-pencil mr-1"></i></a>
-                  <a href="{{url('/attendance/delete/'.$attens->id) }}" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                  <td>{{ $reps->org_Name }}</td>
+                  <td>{{ $reps->org_Head }}</td>
+                  <td>{{ $reps->head_Mobile }}</td>
+                  <td>{{ $reps->total_Stu }}</td>
+                  <td>{{ $reps->class_room }}</td>
+                  <td><a href="{{url('/report/edit/'.$reps->id) }}" class="btn btn-success btn-sm"><i class="fa fa-pencil mr-1"></i></a>
+                  <a href="{{url('/report/delete/'.$reps->id) }}" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i> </a>
                       
                   </td>
                 </tr>
