@@ -51,9 +51,12 @@ class ReportController extends Controller
     public function view_all_report()
     {
         //$att = Attendance::all();
-    	$rep = DB::table('reports')->get();
+    	$reps = DB::table('reports')->get();
 
-    	return view('admin.page.view_all_report',['rep'=>$rep]);
+        $result =view('admin.page.view_all_report')
+                     ->with('rep',$reps);
+          return view('admin_layout')
+                    ->with('view_all_report',$result);
     }
 
 

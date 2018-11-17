@@ -108,10 +108,206 @@
                   <p>View Report </p>
                 </a>
               </li>
+
+              
+              
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-trophy"></i>
+             
+              <p>
+              Award
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{URL::to('/add_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>Add Award</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{URL::to('/view_all_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>All Award </p>
+                </a>
+              </li>
+
+              
               
             </ul>
           </li>
          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-money"></i>
+              <!-- <i class="far fa-money-bill-alt"></i> -->
+              <p>
+              Expense
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{URL::to('/add_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>Add Expense</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{URL::to('/view_all_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>All Expense </p>
+                </a>
+              </li>
+
+              
+              
+            </ul>
+          </li>
+          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-bell"></i>
+              <p>
+              Notice
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{URL::to('/add_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>Add Notice</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{URL::to('/view_all_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>All Notice </p>
+                </a>
+              </li>
+
+              
+              
+            </ul>
+          </li>
+            
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-building-o"></i>
+              <p>
+              Department
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{URL::to('/add_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>Add Department</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{URL::to('/view_all_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>All Department </p>
+                </a>
+              </li>
+
+              
+              
+            </ul>
+          </li>
+
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-envelope"></i>
+              
+              <p>
+              Application
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{URL::to('/add_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>Add Application</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{URL::to('/view_all_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>All Application </p>
+                </a>
+              </li>
+
+              
+              
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-money"></i>
+              <p>
+              Salary
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{URL::to('/add_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>Add Salary</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{URL::to('/view_all_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>All Salary </p>
+                </a>
+              </li>
+
+              
+              
+            </ul>
+          </li>  
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-calendar"></i>
+              <!-- <i class="fas fa-calendar-alt"></i> -->
+              <p>
+              Holyday
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{URL::to('/add_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>Add Holyday</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{URL::to('/view_all_report')}}" class="nav-link">
+                    <i class="fa fa-angle-double-right nav-icon"></i>
+                  <p>All Holyday </p>
+                </a>
+              </li>
+
+              Holyday
+              
+            </ul>
+          </li>  
+
           <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-edit"></i>

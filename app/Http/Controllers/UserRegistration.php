@@ -59,6 +59,32 @@ class UserRegistration extends Controller
         return Redirect::to('/');
     }
 
+    public function register_form(){
+        return view('register');
+    }
+
+    public function admin_login(Request $request){
+        $username = $request->username;
+        $password = $request->password;
+
+         
+      $result =  DB::table('users')
+                        ->where('email',$username)
+                        ->where('password',$password) 
+                        ->first();
+ 
+        if($result){
+             return Redirect::to('/admin');
+        }
+        else{
+            return Redirect::to('/user_login');
+        }
+
+
+
+
+    }
+
     /**
      * Display the specified resource.
      *

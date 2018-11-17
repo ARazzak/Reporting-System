@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin',function(){
-    return view('admin_layout');
-});
+  Route::get('/admin',function(){
+      return view('admin_layout');
+ });
 
 
 
@@ -25,7 +25,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/register','UserRegistration@store');
+Route::get('/registers','UserRegistration@register_form');
+
+Route::post('/user_login','UserRegistration@admin_login');
 
 
 //Attendance Route
